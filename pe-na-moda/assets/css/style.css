@@ -1,0 +1,343 @@
+:root {
+    --cor-preta: #FFDA94;
+    --cor-branca: white;
+    --cor-execluir: #E31B1B;
+    --cor-ouro: #CDB181;
+    --cor-editar: #2877C1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gotu', sans-serif;
+    transition: 0.5s;
+    font-family: 'Quicksand', sans-serif;
+}
+html {
+        --s: 29px; /* control the size */
+        --b: 3; /* control the thickness*/
+        
+        --g:#0000 calc(100% - var(--s)/var(--b) - 1px),#FFDA94 /* 1st color*/ 
+            calc(100% - var(--s)/var(--b)) calc(100% - 1px),#0000;
+        --r:calc(2.414*var(--s));
+        --p:calc(1.414*var(--s));
+        background:
+          radial-gradient(var(--r) at 0    0   ,var(--g)) var(--r) var(--r),
+          radial-gradient(var(--s) at 0    0   ,var(--g)) var(--p) var(--p),
+          radial-gradient(var(--r) at 0    100%,var(--g)) 0 var(--p),
+          radial-gradient(var(--s) at 0    100%,var(--g)) calc(-1*var(--s)) var(--r),
+          radial-gradient(var(--r) at 100% 0   ,var(--g)) var(--p) 0,
+          radial-gradient(var(--s) at 100% 0   ,var(--g)) var(--r) calc(-1*var(--s)),
+          radial-gradient(var(--r) at 100% 100%,var(--g)) calc(-1*var(--s)) calc(-1*var(--s)),
+          radial-gradient(var(--s) at 100% 100%,var(--g)) #fff /* 2nd color */;  
+        background-size: calc(2*var(--r)) calc(2*var(--r));
+      }
+      
+          
+          
+      
+      
+  
+  
+body {
+    /* background-image: url("../img/fundo7.png"); */
+    background-repeat:repeat;
+    background-position: absolute;
+    width: 100%;
+     
+}
+
+.ti {
+    text-align: center;
+}
+
+.dis {
+    display: flex;
+    justify-content: center;
+    width: 100px;
+}
+
+.dis a img {
+    width: 40px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15px;
+    height: fit-content;
+    background-color: var(--cor-preta);
+}
+
+header picture img {
+    height: 90px;
+}
+
+#product {
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 60px;
+    padding-bottom: 40px;
+    width: 100%;
+}
+#product img {
+    width: 220px;
+    height: 220px;
+}
+
+.product img {
+    width: 20vh;
+}
+
+.mostrarP {
+    background-color: var(--cor-branca);
+    border: 1px solid #CDB181;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border-radius: 10px;
+    height: 360px;
+}
+
+.mostrarP p {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.mostrarPreco {
+    color: var(--cor-ouro);
+}
+
+.excluir {
+    transition: 0.3s;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #E31B1B;
+    color: white;
+    padding: 8px 3px;
+    width: 25%;
+    cursor: pointer;
+    margin: 10px 0px;
+}
+
+.editar {
+    transition: 0.3s;
+    background-color: var(--cor-editar);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 8px 3px;
+    width: 25%;
+    cursor: pointer;
+    color: white;
+    margin-left: 10px;
+}
+
+.excluir:hover {
+    width: 30%;
+}
+.editar:hover {
+    width: 30%;
+}
+
+
+
+/* ajimação do add ---------------------------------------------------------- */
+
+.form-div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.produtos{
+    display: block;
+    clip-path: polygon(0 0,100% 0,100% calc(100% - 30px),50% 100%,0 calc(100% - 30px));
+}
+
+.cria{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    flex-direction: column-reverse;
+}
+
+#criar{
+    margin: 8px; 
+    text-align: left !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 80%;
+    width: 100%;
+    display: none;
+}
+
+#criar input{
+    border: none;
+    border-bottom: #CDB181 solid 2px;
+    border-radius: 8px;
+    padding: 8px;
+    width: fit-content;
+
+}
+
+.expand{
+    appearance: none;
+    border: 2px solid var(--cor-preta);
+    padding: 8px;
+    text-align: center;
+    margin: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--cor-branca);
+}
+
+
+.expand::before{
+    content: "Adcionar produto";
+}
+
+.expand:checked::before{
+    content: "Fechar";
+}
+
+#criar:has(+ .expand:checked){
+    display: flex;
+}
+.enviar{
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    outline: none;
+    padding: 10px;
+    color: #FF5757;
+    font-weight: 700;
+    background: white ;
+    background-size: 600% 600%;
+    margin: 12px;
+    cursor: pointer;
+}
+
+/* -------------------form de alterar----------------- */
+#teste {
+    padding: 50px;
+    clip-path: polygon(0 0,50% 30px,100% 0,100% 100%,0 100%);
+    margin-top: -25px;
+    background-color: var(--cor-preta);
+    margin-top: 40px;
+    text-align: center;
+    color: var(--cor-branca);
+}
+
+#editor {
+    font-size: 30px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+}
+
+#alterar{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    flex-direction: column;
+}
+
+/* #alterar input {
+    border: none;
+    border-bottom: #CDB181 solid 2px;
+    border-radius: 3px;
+    padding: 8px;
+    width: fit-content;
+} */
+
+#alterar input {
+    color: var(--cor-branca);
+    background: transparent;
+    font-weight: 500;
+    font-size: 14px;
+    height: 40px;
+    border-radius: 0px;
+    padding-left: 10px;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+    outline: none;
+    }
+    #alterar input:focus {
+    border-bottom: 4.5px solid var(--cor-ouro);
+    -webkit-transition: 0.1s;
+    transition: 0.5s;
+    }
+
+    .enviar {
+        margin-top: 30px;
+        outline: none;
+        display: inline-block;
+        border: 1px solid #fff;
+        padding: 0.8rem 1rem;
+        border-radius: 5px;
+        background: transparent;
+        color: #fff;
+        font-size: 1rem;
+        transition: .3s;
+        cursor: pointer;
+        position: relative;
+        }
+        .enviar::before {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        border-top: 1.2px solid #fff;
+        border-left: 1.2px solid #fff;
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+        transition: .3s;
+        }
+        .enviar::after {
+        content: '';
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        border-bottom: 1.2px solid #fff;
+        border-right: 1.2px solid #fff;
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+        transition: .3s;
+        }
+        .enviar:hover {
+        box-shadow: 4px 4px 10px rgb(184, 184, 184);
+        transform: translateY(-5px);
+        }
+        .enviar:hover::after, .enviar:hover::before {
+        height: 20px;
+        width: 20px;
+        opacity: 1;
+        } 
+.c {
+    box-shadow: 0px 4px 4px black;
+    border: 1px solid black;
+    color: var(--cor-preta);
+    background-color: var(--cor-branca);
+}              
+
+.c:before {
+    border-top: 1.2px solid black;
+    border-left: 1.2px solid black;
+}
+
+.c:after {
+    border-bottom: 1.2px solid black;
+    border-right: 1.2px solid black;
+}

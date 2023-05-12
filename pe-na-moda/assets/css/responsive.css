@@ -1,0 +1,14 @@
+@media(max-width:481px){
+    .ti{
+        display: none !important;
+    }
+    header{
+        justify-content: space-between;
+    }
+}
+
+@media(max-width:365px){
+    .ti img{
+        height: 70px;
+    }
+}

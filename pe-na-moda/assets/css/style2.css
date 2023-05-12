@@ -1,0 +1,137 @@
+:root {
+    --cor-preta: #FFDA94;
+    --cor-branca: white;
+    --cor-execluir: #E31B1B;
+    --cor-ouro: #CDB181;
+    --cor-texto2: #F1CF62;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gotu', sans-serif;
+    transition: 0.5s;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 13vh;
+    padding-right: 15px;
+    background-color: var(--cor-preta);
+}
+
+header picture img {
+    height: 73px;
+    margin-left: 30px;
+}
+
+main{
+    background-image: url(../img/Design\ sem\ nome\ \(1\)\ 1.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 13vh);
+}
+
+main h1{
+    color: var(--cor-texto2);
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    text-decoration:underline;
+    font-size: 40px;
+}
+
+main btn a{
+    align-items: center;
+}
+#divpai{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 265px;
+}
+#divpai .divb{
+    display: flex;
+    justify-content: end;
+    width: 45vw;
+}
+
+.cta {
+    border: none;
+    background: none;
+  }
+  
+  .cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 19px;
+    font-family: 'Quicksand', sans-serif;
+    padding-right: 15px;
+    text-transform: uppercase;
+  }
+  
+  .cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+  }
+  
+  .cta:hover svg {
+    transform: translateX(0);
+  }
+  
+  .cta:active svg {
+    transform: scale(0.9);
+  }
+  
+  .hover-underline-animation {
+    position: relative;
+    color: black;
+    padding-bottom: 20px;
+  }
+  
+  .hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .divb{
+    padding-top: 15px;
+  }
+
+  /*--------------------------------------BARRA DO SCROLL------------------------------------- */
+
+  ::-webkit-scrollbar {
+    width: 12px;               
+  }
+  
+*::-webkit-scrollbar-track {
+    background: black;        
+  }
+  
+/* *::-webkit-scrollbar-thumb {
+    background-color: white;    
+    border-radius: 20px;       
+    border: 1.5px solid var(--cor-texto2);  
+    width: 1px;
+} */
+/*---------------------------------------------------------------------------*/
+
+.divb a{
+    text-decoration: none;
+}
